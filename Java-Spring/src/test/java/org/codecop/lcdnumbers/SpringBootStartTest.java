@@ -2,6 +2,7 @@ package org.codecop.lcdnumbers;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
@@ -16,7 +17,8 @@ public class SpringBootStartTest {
 
     @Test
     public void lcdAllDigitsOfSize2(CapturedOutput output) throws IOException {
-        new Main().run(new DefaultApplicationArguments("1234567890", "2"));
+
+        new Main().doRun(((ApplicationArguments) new DefaultApplicationArguments("1234567890", "2")).getNonOptionArgs());
         assertThat(output.getOut(), endsWith(Input.join(Input.allDigitsSize2())));
     }
 }

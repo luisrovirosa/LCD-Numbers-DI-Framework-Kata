@@ -29,7 +29,7 @@ public class LcdMainTest {
     public void lcdAllDigitsOfSize2(CapturedOutput output) throws IOException {
         when(args.getNonOptionArgs()).thenReturn(Arrays.asList("1234567890", "2"));
 
-        lcdMain.run(args);
+        lcdMain.doRun(args.getNonOptionArgs());
 
         assertEquals(Input.join(Input.allDigitsSize2()), output.getOut());
     }
@@ -39,7 +39,7 @@ public class LcdMainTest {
     public void lcdAllDigitsDefaultSize(CapturedOutput output) throws IOException {
         when(args.getNonOptionArgs()).thenReturn(Arrays.asList("1234567890"));
 
-        lcdMain.run(args);
+        lcdMain.doRun(args.getNonOptionArgs());
 
         assertEquals(Input.join(Input.allDigitsSize1()), output.getOut());
     }
