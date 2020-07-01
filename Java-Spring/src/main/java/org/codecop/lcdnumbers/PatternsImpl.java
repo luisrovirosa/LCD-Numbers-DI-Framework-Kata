@@ -1,12 +1,6 @@
 package org.codecop.lcdnumbers;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.stereotype.Repository;
+import java.util.*;
 
 /**
  * Knows the initial pattern of each LCD digit.

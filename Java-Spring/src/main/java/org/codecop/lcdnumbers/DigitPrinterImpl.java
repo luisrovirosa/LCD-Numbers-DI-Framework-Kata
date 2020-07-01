@@ -1,11 +1,7 @@
 package org.codecop.lcdnumbers;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * Appends lines next to each other and adds line breaks.
