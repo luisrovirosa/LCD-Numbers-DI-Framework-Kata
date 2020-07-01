@@ -1,10 +1,8 @@
 package org.codecop.lcdnumbers;
 
-import java.util.List;
-import java.util.Objects;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Combines Converter, Scaler and Printer.
@@ -12,12 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class LcdDisplayImpl implements LcdDisplay {
 
-    @Autowired
     private DigitsSplitter digitsSplitter;
     private DigitScaler digitScaler;
     private DigitPrinter digitPrinter;
 
     public LcdDisplayImpl() {
+        digitsSplitter = new DigitsSplitterImpl();
         digitScaler = new DigitScalerImpl();
         digitPrinter = new DigitPrinterImpl();
     }
