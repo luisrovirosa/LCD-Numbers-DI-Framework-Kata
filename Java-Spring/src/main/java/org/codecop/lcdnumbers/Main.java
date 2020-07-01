@@ -2,7 +2,7 @@ package org.codecop.lcdnumbers;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.DefaultApplicationArguments;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class Main implements ApplicationRunner {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        new Main().run(new DefaultApplicationArguments(args));
     }
 
 }
