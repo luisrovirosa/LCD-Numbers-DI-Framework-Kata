@@ -1,12 +1,9 @@
 package org.codecop.lcdnumbers;
 
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-
 import java.util.Arrays;
 import java.util.List;
 
-public class Main implements ApplicationRunner {
+public class Main {
 
     private LcdDisplay lcdDisplay;
 
@@ -14,11 +11,6 @@ public class Main implements ApplicationRunner {
         lcdDisplay = new LcdDisplayImpl();
     }
 
-    @Override
-    public void run(ApplicationArguments args) {
-
-        doRun(args.getNonOptionArgs());
-    }
 
     public void doRun(List<String> nonOptionArgs) {
         if (nonOptionArgs.size() == 0) {
