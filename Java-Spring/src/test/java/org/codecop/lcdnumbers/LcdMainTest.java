@@ -3,8 +3,6 @@ package org.codecop.lcdnumbers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
@@ -12,17 +10,17 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest
 public class LcdMainTest {
 
-    @MockBean
     private ApplicationArguments args;
 
     private Main lcdMain;
 
     public LcdMainTest() {
+        args = mock(ApplicationArguments.class);
         lcdMain = new Main();
     }
 
