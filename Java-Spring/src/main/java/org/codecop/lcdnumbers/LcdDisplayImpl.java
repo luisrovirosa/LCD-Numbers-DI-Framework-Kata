@@ -1,13 +1,10 @@
 package org.codecop.lcdnumbers;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
  * Combines Converter, Scaler and Printer.
  */
-@Service
 public class LcdDisplayImpl implements LcdDisplay {
 
     private DigitsSplitter digitsSplitter;
