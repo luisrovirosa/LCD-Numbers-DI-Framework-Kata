@@ -13,7 +13,6 @@ public class ScalingArgument {
     }
 
     public Scaling getScaling() {
-        Scaling scaling = nonOptionArgs.size() > 1 ? Scaling.of(Integer.parseInt(nonOptionArgs.get(1))) : Scaling.NONE;
-        return scaling;
+        return nonOptionArgs.size() > 1 ? Scaling.of(Integer.parseInt(nonOptionArgs.get(1))) : Scaling.NONE;
     }
 }
