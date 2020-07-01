@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 /**
  * Repeat objects and characters according to scaling.
  */
-@Service
 public class ScalingRepeaterImpl implements ScalingRepeater {
 
     @Override
