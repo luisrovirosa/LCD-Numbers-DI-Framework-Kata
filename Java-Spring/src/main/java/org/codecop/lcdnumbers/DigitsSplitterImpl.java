@@ -14,8 +14,11 @@ public class DigitsSplitterImpl implements DigitsSplitter {
 
     @Autowired
     private NumeralSystem numeralSystem;
-    @Autowired
     private DigitFactory digitFactory;
+
+    public DigitsSplitterImpl() {
+        digitFactory = new DigitFactoryImpl();
+    }
 
     @Override
     public List<Digit> convert(int number) {
