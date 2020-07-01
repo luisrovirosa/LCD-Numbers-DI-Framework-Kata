@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 /**
  * Scales x and y of digit lines.
  */
-@Service
 public class DigitScalerImpl implements DigitScaler {
 
     private ScalingRepeater repeater;
