@@ -2,9 +2,6 @@ package org.codecop.lcdnumbers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import org.springframework.stereotype.Service;
 
 /**
  * Repeat objects and characters according to scaling.
