@@ -1,38 +1,35 @@
 package org.codecop.lcdnumbers;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.system.CapturedOutput;
-import org.springframework.boot.test.system.OutputCaptureExtension;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LcdMainTest {
-
-
     private Main lcdMain;
+    private final ByteArrayOutputStream outputStream;
 
     public LcdMainTest() {
         lcdMain = new Main();
+        outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
     }
 
     @Test
-    @ExtendWith(OutputCaptureExtension.class)
-    public void lcdAllDigitsOfSize2(CapturedOutput output) throws IOException {
+    public void lcdAllDigitsOfSize2() throws IOException {
         lcdMain.doRun(Arrays.asList("1234567890", "2"));
 
-        assertEquals(Input.join(Input.allDigitsSize2()), output.getOut());
+        assertEquals(Input.join(Input.allDigitsSize2()), outputStream.toString());
     }
 
     @Test
-    @ExtendWith(OutputCaptureExtension.class)
-    public void lcdAllDigitsDefaultSize(CapturedOutput output) throws IOException {
-
+    public void lcdAllDigitsDefaultSize() throws IOException {
         lcdMain.doRun(Arrays.asList("1234567890"));
 
-        assertEquals(Input.join(Input.allDigitsSize1()), output.getOut());
+        assertEquals(Input.join(Input.allDigitsSize1()), outputStream.toString());
     }
 }
