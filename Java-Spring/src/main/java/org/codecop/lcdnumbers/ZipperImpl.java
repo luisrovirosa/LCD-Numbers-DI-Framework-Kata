@@ -4,15 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
-
-import org.springframework.stereotype.Service;
 
 /**
  * Zip joins elements of collections element wise, i.e. all first elements are joined and so on.
  */
-@Service
 public class ZipperImpl implements Zipper {
 
     @Override
