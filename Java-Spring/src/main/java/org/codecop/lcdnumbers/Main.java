@@ -29,7 +29,7 @@ public class Main implements ApplicationRunner {
 
         int number = Integer.parseInt(nonOptionArgs.get(0));
 
-        ScalingArgument scalingArgument = new ScalingArgument(args);
+        ScalingArgument scalingArgument = new ScalingArgument(args.getNonOptionArgs());
         System.out.print(lcdDisplay.toLcd(number, scalingArgument.getScaling()));
     }
 

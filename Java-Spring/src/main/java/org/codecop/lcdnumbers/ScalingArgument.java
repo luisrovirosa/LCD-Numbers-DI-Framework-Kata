@@ -1,15 +1,13 @@
 package org.codecop.lcdnumbers;
 
-import org.springframework.boot.ApplicationArguments;
-
 import java.util.List;
 
 public class ScalingArgument {
 
     private List<String> nonOptionArgs;
 
-    public ScalingArgument(ApplicationArguments args) {
-        nonOptionArgs = args.getNonOptionArgs();
+    public ScalingArgument(List<String> nonOptionArgs) {
+        this.nonOptionArgs = nonOptionArgs;
     }
 
     public Scaling getScaling() {
