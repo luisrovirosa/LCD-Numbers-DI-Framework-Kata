@@ -14,11 +14,11 @@ public class LcdDisplayImpl implements LcdDisplay {
 
     @Autowired
     private DigitsSplitter digitsSplitter;
-    @Autowired
     private DigitScaler digitScaler;
     private DigitPrinter digitPrinter;
 
     public LcdDisplayImpl() {
+        digitScaler = new DigitScalerImpl();
         digitPrinter = new DigitPrinterImpl();
     }
 
