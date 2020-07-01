@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 /**
  * Appends lines next to each other and adds line breaks.
  */
-@Service
 public class DigitPrinterImpl implements DigitPrinter {
 
     private static final String NEWLINE = "\n";
