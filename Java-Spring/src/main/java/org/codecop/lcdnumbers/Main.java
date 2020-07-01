@@ -10,8 +10,11 @@ import java.util.List;
 @SpringBootApplication
 public class Main implements ApplicationRunner {
 
-    private ScalingArgument scalingArgument;
     private LcdDisplay lcdDisplay;
+
+    public Main() {
+        lcdDisplay = new LcdDisplayImpl();
+    }
 
     @Override
     public void run(ApplicationArguments args) {
@@ -28,8 +31,7 @@ public class Main implements ApplicationRunner {
 
         int number = Integer.parseInt(nonOptionArgs.get(0));
 
-        lcdDisplay = new LcdDisplayImpl();
-        scalingArgument = new ScalingArgument(args);
+        ScalingArgument scalingArgument = new ScalingArgument(args);
         System.out.print(lcdDisplay.toLcd(number, scalingArgument.getScaling()));
     }
 
