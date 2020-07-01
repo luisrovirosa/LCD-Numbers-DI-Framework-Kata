@@ -1,10 +1,9 @@
 package org.codecop.lcdnumbers;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * Splits into digits and converts digits to LCD digits.
@@ -16,7 +15,7 @@ public class DigitsSplitterImpl implements DigitsSplitter {
     private DigitFactory digitFactory;
 
     public DigitsSplitterImpl() {
-        numeralSystem = new NumeralSystemImpl(10);
+        numeralSystem = new NumeralSystemProvider().createNumeralSystem();
         digitFactory = new DigitFactoryImpl();
     }
 
