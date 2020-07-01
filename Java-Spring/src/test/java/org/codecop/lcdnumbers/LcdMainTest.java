@@ -1,19 +1,18 @@
 package org.codecop.lcdnumbers;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
-
-import java.io.IOException;
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class LcdMainTest {
@@ -21,8 +20,11 @@ public class LcdMainTest {
     @MockBean
     private ApplicationArguments args;
 
-    @Autowired
     private Main lcdMain;
+
+    public LcdMainTest() {
+        lcdMain = new Main();
+    }
 
     @Test
     @ExtendWith(OutputCaptureExtension.class)
