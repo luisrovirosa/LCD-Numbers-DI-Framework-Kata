@@ -1,19 +1,18 @@
 package org.codecop.lcdnumbers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class Main implements ApplicationRunner {
 
     @Autowired
     private ScalingArgument scalingArgument;
-    @Autowired
     private LcdDisplay lcdDisplay;
 
     @Override
@@ -31,6 +30,7 @@ public class Main implements ApplicationRunner {
 
         int number = Integer.parseInt(nonOptionArgs.get(0));
 
+        lcdDisplay = new LcdDisplayImpl();
         System.out.print(lcdDisplay.toLcd(number, scalingArgument.getScaling()));
     }
 
