@@ -16,8 +16,11 @@ public class LcdDisplayImpl implements LcdDisplay {
     private DigitsSplitter digitsSplitter;
     @Autowired
     private DigitScaler digitScaler;
-    @Autowired
     private DigitPrinter digitPrinter;
+
+    public LcdDisplayImpl() {
+        digitPrinter = new DigitPrinterImpl();
+    }
 
     @Override
     public String toLcd(int number, Scaling scaling) {
